@@ -1,6 +1,6 @@
 import Conversation from "./conversation";
 
-const Conversation = () => {
+const Conversations = () => {
   return (
     <div className="py-2 flex flex-col overflow-auto">
       <Conversation />
@@ -12,4 +12,4 @@ const Conversation = () => {
   );
 };
 
-export default Conversation;
+export default Conversations;

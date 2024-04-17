@@ -1,3 +1,5 @@
+import Messages from "./Messages";
+
 const MessageContainer = () => {
   return (
     <div className="md:min-w-[450px] flex flex-col">
@@ -7,6 +9,9 @@ const MessageContainer = () => {
           <span className="label-text">To:</span>
           <span className="text-gray-900 font-bold">John Doe</span>
         </div>
+
+        <Messages />
+        {/* <MessageInput */}
       </>
     </div>
   );

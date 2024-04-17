@@ -1,12 +1,13 @@
 import React from "react";
+import SearchInput from "./SearchInput";
 
 const sidebar = () => {
   return (
     <div>
       <SearchInput />
-      <div className="divider px-3"></div>
+      {/* <div className="divider px-3"></div>
       <Conversations />
-      <LogoutButton />
+      <LogoutButton /> */}
     </div>
   );
 };

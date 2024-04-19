@@ -24,7 +24,7 @@ const useSignup = () => {
 
     setLoading(true);
     try {
-      const res = await fetch("/auth/signup", {
+      const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -40,9 +40,13 @@ const useSignup = () => {
       if (data.error) {
         throw new Error(data.error);
       }
+
+      //update user data in localstorage
+
       // loacal storage
       localStorage.setItem("chat-user", JSON.stringify(data));
       //context
+      setAuthUser(data);
     } catch (error) {
       toast.error(error.message);
     } finally {

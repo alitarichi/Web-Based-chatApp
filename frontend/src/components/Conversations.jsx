@@ -4,7 +4,6 @@ import Conversation from "./conversation";
 
 const Conversations = () => {
   const { loading, conversations } = useGetConversations();
-  console.log("CONVERSATIONS:", conversations);
   return (
     <div className="py-2 flex flex-col overflow-auto">
       {conversations.map((conversation, idx) => (
@@ -15,11 +14,11 @@ const Conversations = () => {
           lastIdx={idx === conversations.length - 1}
         />
       ))}
+
       {loading ? (
-        <span className="LOADING loading-spinner mx-auto"></span>
+        <span className="loading loading-spinner mx-auto"></span>
       ) : null}
     </div>
   );
 };
-
 export default Conversations;

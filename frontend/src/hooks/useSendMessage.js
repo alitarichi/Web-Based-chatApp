@@ -13,16 +13,15 @@ const useSendMessage = () => {
         `/api/messages/send/${selectedConversation._id}`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            message,
-          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message }),
         }
       );
       const data = await res.json();
-      if (data.error) {
-        throw new Error(data.error);
-      }
+      if (data.error) throw new Error(data.error);
+
       setMessages([...messages, data]);
     } catch (error) {
       toast.error(error.message);
@@ -31,7 +30,6 @@ const useSendMessage = () => {
     }
   };
 
-  return { loading, sendMessage };
+  return { sendMessage, loading };
 };
-
 export default useSendMessage;

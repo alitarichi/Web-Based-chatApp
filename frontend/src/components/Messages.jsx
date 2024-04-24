@@ -19,10 +19,7 @@ const Messages = () => {
       {!loading &&
         messages.length > 0 &&
         messages.map((message, index) => (
-          <div
-            key={message._id}
-            ref={index === messages.length - 1 ? lastMessageRef : null}
-          >
+          <div ref={index === messages.length - 1 ? lastMessageRef : null}>
             <Message message={message} />
           </div>
         ))}
